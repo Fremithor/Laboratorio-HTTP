@@ -1,3 +1,6 @@
 FROM nginx:alpine
-COPY *.html /usr/share/nginx/html/
+
+# Entrega las páginas HTML, estilos CSS e imágenes del sitio.
+COPY . /usr/share/nginx/html/
+
 EXPOSE 80

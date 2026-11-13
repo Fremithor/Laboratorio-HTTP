@@ -1,22 +1,49 @@
-# Sistemas Telemáticos
+# Laboratorio HTTP · Capa 7 del modelo OSI
 
-Sitio académico en HTML sobre los aprendizajes del curso. Incluye una página por integrante.
+Sitio académico estático, construido con HTML y CSS, sobre Redes de Computadores, HTTP y la capa de aplicación.
 
-## Abrir directamente
+## Integrantes
 
-Abra `index.html` en el navegador.
+- Iván Rodríguez
+- Jeryleefth Lasso
+- Stefanie Bermúdez
+
+Cada integrante tiene una página individual en [`Integrantes/`](Integrantes/).
+
+## Estructura
+
+```text
+Laboratorio-HTTP/
+├── index.html
+├── css/styles.css
+├── img/redes.svg
+├── Integrantes/
+│   ├── ivan-rodriguez.html
+│   ├── jeryleefth-lasso.html
+│   └── stefanie-bermudez.html
+├── Dockerfile
+└── README.md
+```
+
+## Abrir el sitio
+
+Puedes abrir `index.html` directamente en un navegador. Para comprobar el flujo HTTP mediante un servidor web, utiliza Docker.
 
 ## Ejecutar con Docker
 
-Con Docker instalado, abra una terminal en esta carpeta y ejecute:
+Desde la carpeta raíz:
 
 ```bash
-docker build -t sistemas-telematicos .
-docker run -d -p 8001:80 --name sistemas-telematicos sistemas-telematicos
+docker build -t laboratorio-http .
+docker run --rm -p 8001:80 --name laboratorio-http laboratorio-http
 ```
 
-Visite http://localhost:8001. Para detener y eliminar el contenedor: `docker rm -f sistemas-telematicos`. Si el puerto 8001 está ocupado, cambie el primer número del parámetro `-p`.
+Abre [http://localhost:8001](http://localhost:8001). Nginx atiende las solicitudes HTTP y entrega los archivos HTML, CSS e imágenes. Para detenerlo, presiona `Ctrl + C`.
 
-## Antes de entregar
+## Entregables incluidos
 
-Completar la biografía personal de cada integrante y revisar el contenido. Subir estos archivos a un repositorio de GitHub y entregar su enlace. Referencia: https://github.com/danfelun/IRYCIP-Sitio-HTML
+- Sitio web HTML y CSS estático.
+- Página principal y página individual por integrante.
+- README con instrucciones reproducibles.
+- Dockerfile para servir el sitio con Nginx.
+- Repositorio: [Fremithor/Laboratorio-HTTP](https://github.com/Fremithor/Laboratorio-HTTP).
